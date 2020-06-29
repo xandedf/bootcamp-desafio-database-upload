@@ -26,7 +26,9 @@ class CreateTransactionService {
     // Verificar se essa transação pode ser criada, validando o outcome com o total
     const { total } = await transactionsRepository.getBalance();
     if (type === 'outcome' && total < value) {
-      throw new AppError('Requested amount greater than the total');
+      throw new AppError(
+        `${title} - Requested amount(${value}) greater than the total(${total})`,
+      );
     }
 
     // Verificar se a categoria existe, caso nao exista, criar e pegar o ID
