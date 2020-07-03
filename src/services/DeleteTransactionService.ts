@@ -13,7 +13,7 @@ class DeleteTransactionService {
       throw new AppError('Transaction not exist');
     }
 
-    await transactionRepository.delete(transaction);
+    await transactionRepository.delete(transactionId);
   }
 }
 
