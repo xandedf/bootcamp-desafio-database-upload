@@ -9,7 +9,7 @@ export default class CreateTransactions1593214146952
         columns: [
           {
             name: 'id',
-            type: 'varchar',
+            type: 'uuid',
             isPrimary: true,
             generationStrategy: 'uuid',
           },
@@ -32,12 +32,12 @@ export default class CreateTransactions1593214146952
           },
           {
             name: 'created_at',
-            type: 'timestamp',
+            type: 'timestamp with time zone',
             default: 'now()',
           },
           {
             name: 'updated_at',
-            type: 'timestamp',
+            type: 'timestamp with time zone',
             default: 'now()',
           },
         ],
